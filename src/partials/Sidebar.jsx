@@ -353,14 +353,14 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               {/* Campaigns */}
               <li
                 className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                  pathname.includes("campaigns") && "bg-slate-900"
+                  pathname.includes("aboutus") && "bg-slate-900"
                 }`}
               >
                 <NavLink
                   end
-                  to="/campaigns"
+                  to="/aboutus"
                   className={`block text-slate-200 truncate transition duration-150 ${
-                    pathname.includes("campaigns")
+                    pathname.includes("aboutus")
                       ? "hover:text-slate-200"
                       : "hover:text-white"
                   }`}
@@ -369,7 +369,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
                       <path
                         className={`fill-current ${
-                          pathname.includes("campaigns")
+                          pathname.includes("aboutus")
                             ? "text-indigo-500"
                             : "text-slate-600"
                         }`}
@@ -377,7 +377,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       />
                       <path
                         className={`fill-current ${
-                          pathname.includes("campaigns")
+                          pathname.includes("aboutus")
                             ? "text-indigo-300"
                             : "text-slate-400"
                         }`}
