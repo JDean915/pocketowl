@@ -15,8 +15,6 @@ function CoursePage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [courseData, setCourseData] = useState({})
 
-  console.log(code)
-
   useEffect(() => {
     const getCourseData = async () => {
       let { data, error } = await supabase
@@ -32,8 +30,6 @@ function CoursePage() {
 
     getCourseData()
   }, [])
-
-  console.log(courseData)
 
   return (
     <div className="flex h-screen overflow-hidden">

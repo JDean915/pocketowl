@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import supabase from '../../utils/SupaClient';
+import { Link } from 'react-router-dom';
 
 function DashboardCard10() {
+  const [courses, setCourses] = useState([])
+
+  useEffect(() => {
+    const getCourses = async () => {
+      let { data, error } = await supabase
+        .from('Course')
+        .select('*')
+
+      setCourses(data)
+    }
+
+    getCourses()
+  }, [])
 
   const customers = [
     {
@@ -70,22 +85,15 @@ function DashboardCard10() {
             {/* Table body */}
             <tbody className="text-sm divide-y divide-slate-100 dark:divide-slate-700">
               {
-                customers.map(customer => {
+                courses.map(course => {
                   return (
-                    <tr key={customer.id}>
+                    <tr key={course.id}>
                       <td className="p-2 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <div className="font-medium text-slate-800 dark:text-slate-100">{customer.name}</div>
-                        </div>
-                      </td>
-                      <td className="p-2 whitespace-nowrap">
-                        <div className="text-left">{customer.email}</div>
-                      </td>
-                      <td className="p-2 whitespace-nowrap">
-                        <div className="text-left font-medium text-green-500">{customer.spent}</div>
-                      </td>
-                      <td className="p-2 whitespace-nowrap">
-                        <div className="text-lg text-center">{customer.location}</div>
+                        <Link to={`/courses/${course.course_code}`}>
+                          <div className="flex items-center">
+                            <div className="font-medium text-slate-800 dark:text-slate-100">{course.course_name}</div>
+                          </div>
+                        </Link>
                       </td>
                     </tr>
                   )
