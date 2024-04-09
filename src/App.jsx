@@ -11,7 +11,7 @@ import "./charts/ChartjsConfig";
 
 // Import pages
 import Dashboard from "./pages/Dashboard";
-import D326 from "./pages/D326";
+import CoursePage from "./pages/CoursePage";
 
 function App() {
   const location = useLocation();
@@ -26,7 +26,7 @@ function App() {
     <>
           <Routes>
             <Route index element={<Dashboard />} />
-            <Route exact path="/courses/D326" element={<D326 />} />
+            <Route exact path="/courses/:code" element={<CoursePage />} />
           </Routes>
     </>
   );
