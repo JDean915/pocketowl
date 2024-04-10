@@ -12,6 +12,7 @@ import "./charts/ChartjsConfig";
 // Import pages
 import Dashboard from "./pages/Dashboard";
 import CoursePage from "./pages/CoursePage";
+import Aboutus from "./pages/AboutUs";
 
 function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ function App() {
           <Routes>
             <Route index element={<Dashboard />} />
             <Route exact path="/courses/:code" element={<CoursePage />} />
+            <Route exact path="/aboutus" element={<Aboutus />} />
           </Routes>
     </>
   );
