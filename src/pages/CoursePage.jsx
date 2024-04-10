@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Sidebar from "../partials/Sidebar";
 import Header from "../partials/Header";
-import DashboardCard05 from "../partials/dashboard/DashboardCard10";
+import DashboardCard05 from "../partials/dashboard/DashboardCard01";
 import CourseSummary from "../partials/courses/CourseSummary";
 import ResourceCompletion from "../partials/courses/ResourceCompletion";
 import CompetencyProgress from "../partials/courses/CompetencyProgress";
@@ -29,7 +29,7 @@ function CoursePage() {
     }
 
     getCourseData()
-  }, [])
+  }, [code])
 
   return (
     <div className="flex h-screen overflow-hidden">

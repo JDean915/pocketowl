@@ -66,15 +66,17 @@ function DropdownHelp({
           <ul>
             <li>
               <Link
+                end
+                to="https://docs.google.com/forms/d/e/1FAIpQLSdWX8-2UbdvEmKnd99pKbP3y7w3kT_vTzRiqqV93X20IpoDKA/viewform?usp=sf_link"
+                target="_blank"
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3"
-                to="#0"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <svg className="w-3 h-3 fill-current text-indigo-300 dark:text-indigo-500 shrink-0 mr-2" viewBox="0 0 12 12">
                   <rect y="3" width="12" height="9" rx="1" />
                   <path d="M2 0h8v2H2z" />
                 </svg>
-                <span>Documentation</span>
+                <span>Submit Feedback</span>
               </Link>
             </li>
             <li>
