@@ -1,8 +1,79 @@
 {
-  "hash": "25f7dcc4",
+  "hash": "7af511a5",
   "configHash": "f6e5a6c9",
-  "lockfileHash": "e3b0c442",
-  "browserHash": "cd5c3e4b",
-  "optimized": {},
-  "chunks": {}
+  "lockfileHash": "4dc4d044",
+  "browserHash": "0ea50505",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "d010c347",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "d032c806",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "a08b8106",
+      "needsInterop": false
+    },
+    "chart.js": {
+      "src": "../../node_modules/chart.js/dist/chart.js",
+      "file": "chart__js.js",
+      "fileHash": "a4f9a7fe",
+      "needsInterop": false
+    },
+    "tailwindcss/resolveConfig": {
+      "src": "../../node_modules/tailwindcss/resolveConfig.js",
+      "file": "tailwindcss_resolveConfig.js",
+      "fileHash": "c787e0ad",
+      "needsInterop": true
+    },
+    "@supabase/supabase-js": {
+      "src": "../../node_modules/@supabase/supabase-js/dist/module/index.js",
+      "file": "@supabase_supabase-js.js",
+      "fileHash": "0fe46db9",
+      "needsInterop": false
+    },
+    "@material-tailwind/react": {
+      "src": "../../node_modules/@material-tailwind/react/index.js",
+      "file": "@material-tailwind_react.js",
+      "fileHash": "b421df1c",
+      "needsInterop": true
+    },
+    "react-transition-group": {
+      "src": "../../node_modules/react-transition-group/esm/index.js",
+      "file": "react-transition-group.js",
+      "fileHash": "fd89c6a7",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "browser-PDEGEHMU": {
+      "file": "browser-PDEGEHMU.js"
+    },
+    "browser-VK3YUWZH": {
+      "file": "browser-VK3YUWZH.js"
+    },
+    "chunk-XCDHS5NV": {
+      "file": "chunk-XCDHS5NV.js"
+    },
+    "chunk-FYU6I4CA": {
+      "file": "chunk-FYU6I4CA.js"
+    },
+    "chunk-4ZSTBHIF": {
+      "file": "chunk-4ZSTBHIF.js"
+    },
+    "chunk-HAZNF34R": {
+      "file": "chunk-HAZNF34R.js"
+    },
+    "chunk-WXXH56N5": {
+      "file": "chunk-WXXH56N5.js"
+    }
+  }
 }
