@@ -34,6 +34,7 @@ function App() {
         <Route exact path="/courses/:code" element={<CoursePage />} />
         <Route exact path="/aboutus" element={<Aboutus />} />
         <Route exact path="/authenticate" element={<SupaAuth/>}/>
+        
       </Routes>
     </>
   );
