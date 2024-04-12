@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import supabase from "./../utils/SupaClient";
+import { HomeIcon, BookOpenIcon, AdjustmentsHorizontalIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/solid'
 
 import SidebarLinkGroup from "./SidebarLinkGroup";
 import logo from "../images/logo.svg";
@@ -135,7 +136,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     }`}
                 >
                   <div className="flex items-center">
-                    <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                    <HomeIcon className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
                       <path
                         className={`fill-current ${pathname.includes("dashboard")
                             ? "text-indigo-500"
@@ -150,7 +151,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           }`}
                         d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
                       />
-                    </svg>
+                    </HomeIcon>
                     <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                       Dashboard
                     </span>
@@ -177,7 +178,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
-                            <svg
+                            <BookOpenIcon
                               className="shrink-0 h-6 w-6"
                               viewBox="0 0 24 24"
                             >
@@ -195,7 +196,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                   }`}
                                 d="M12 6a3 3 0 110-6 3 3 0 010 6zm2 18h-4a1 1 0 01-1-1v-6H6v-6a3 3 0 013-3h6a3 3 0 013 3v6h-3v6a1 1 0 01-1 1z"
                               />
-                            </svg>
+                            </BookOpenIcon>
                             <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                               Courses
                             </span>
@@ -259,7 +260,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
-                            <svg
+                            <AdjustmentsHorizontalIcon
                               className="shrink-0 h-6 w-6"
                               viewBox="0 0 24 24"
                             >
@@ -291,7 +292,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                   }`}
                                 d="M19.707 9.292a3.012 3.012 0 00-1.415 1.415L13.286 5.7c-.4.195-.84.298-1.286.3a3 3 0 113-3 2.969 2.969 0 01-.3 1.286l5.007 5.006z"
                               />
-                            </svg>
+                            </AdjustmentsHorizontalIcon>
                             <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                               Settings
                             </span>
@@ -363,7 +364,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     }`}
                 >
                   <div className="flex items-center">
-                    <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                    <QuestionMarkCircleIcon className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
                       <path
                         className={`fill-current ${pathname.includes("aboutus")
                             ? "text-indigo-500"
@@ -378,7 +379,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           }`}
                         d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
                       />
-                    </svg>
+                    </QuestionMarkCircleIcon>
                     <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                       About Us
                     </span>

@@ -30,6 +30,7 @@ function CoursePage() {
 
     getCourseData()
   }, [code])
+  
 
   return (
     <div className="flex h-screen overflow-hidden">
