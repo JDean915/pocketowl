@@ -11,6 +11,7 @@ import "./charts/ChartjsConfig";
 import Dashboard from "./pages/Dashboard";
 import CoursePage from "./pages/CoursePage";
 import Aboutus from "./pages/AboutUs";
+import SupaAuth from "./components/SupaAuth";
 
 const supabase = createClient(
   "https://tqofpvsbigvicndmdnna.supabase.co",
@@ -32,6 +33,7 @@ function App() {
         <Route index element={<Dashboard />} />
         <Route exact path="/courses/:code" element={<CoursePage />} />
         <Route exact path="/aboutus" element={<Aboutus />} />
+        <Route exact path="/authenticate" element={<SupaAuth/>}/>
       </Routes>
     </>
   );
