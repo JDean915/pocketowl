@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { createClient } from '@supabase/supabase-js'
 import { Auth } from '@supabase/auth-ui-react'
+import { ThemeSupa } from "@supabase/auth-ui-shared";
 
 import "./css/style.css";
 
@@ -12,6 +13,8 @@ import Dashboard from "./pages/Dashboard";
 import CoursePage from "./pages/CoursePage";
 import Aboutus from "./pages/AboutUs";
 import SupaAuth from "./components/SupaAuth";
+import Account from "./pages/Account";
+import AllCourses from "./pages/AllCourses";
 
 const supabase = createClient(
   "https://tqofpvsbigvicndmdnna.supabase.co",
@@ -30,11 +33,12 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/authenticate" element={<SupaAuth />} />
         <Route index element={<Dashboard />} />
         <Route exact path="/courses/:code" element={<CoursePage />} />
         <Route exact path="/aboutus" element={<Aboutus />} />
-        <Route exact path="/authenticate" element={<SupaAuth/>}/>
-        
+        <Route exact path="/settings/account" element={<Account />} />
+        <Route exact path="/mastercourselist" element={<AllCourses />} />
       </Routes>
     </>
   );

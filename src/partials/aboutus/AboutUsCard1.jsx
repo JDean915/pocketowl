@@ -11,26 +11,27 @@ function AboutUsCard1() {
       </header>
       <div className="px-5 py-3">
         <div className="flex items-start">
-          <div className="text-2xl font-bold text-slate-800 dark:text-slate-100 mr-2">
+          <div className="text-2xl font-bold text-slate-800 dark:text-slate-100 mr-2 mt-2">
             The Mission
           </div>
         </div>
-        <div className="text-1xl text-slate-800 dark:text-slate-100 mr-2 mt-2">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less norm{" "}
+        <div className="text-1xl mr-2 mt-2">
+          Our mission is to help students progress in their educational journey by providing an application that consolidates resources, rates courses off of difficulty, and provides resource completion tracking and averages the time to complete each course.{" "}
         </div>
-        <div className="text-2xl font-bold text-slate-800 dark:text-slate-100 mr-2 mt-3">
+        <div className="text-2xl font-bold text-slate-800 dark:text-slate-100 mr-2 mt-5">
           Project Details
         </div>
-        <div className="text-1xl text-slate-800 dark:text-slate-100 mr-2 mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec neque
-          velit. Sed varius urna magna, ac vulputate elit condimentum quis.
-          Aliquam finibus hendrerit mattis. Quisque aliquam, eros nec fringilla
-          venenatis, neque turpis aliquet est, ac commodo magna sem ac augue.
-          Etiam sit amet nulla justo. Morbi fringilla diam et nunc venenatis
-          ullamcorper. Phasellus non enim non odio mattis vestibulum vitae sed
-          tortor.
+        <div className="text-1xl mr-2 mt-2">
+          Front-End: Vite, React, TailwindCSS
+          <br />
+          <br />
+          Back-End/Database: PostgreSQL, Supabase
+          <br />
+          <br />
+          User Management and Authentication: Supabase Auth
+          <br />
+          <br />
+          Hosting/Deployment: ?
           <br />
           <br />
           <br />

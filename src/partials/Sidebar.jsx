@@ -5,6 +5,7 @@ import { HomeIcon, BookOpenIcon, AdjustmentsHorizontalIcon, QuestionMarkCircleIc
 
 import SidebarLinkGroup from "./SidebarLinkGroup";
 import logo from "../images/logo.svg";
+import Coffee from "../components/Coffee";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
@@ -350,6 +351,41 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   );
                 }}
               </SidebarLinkGroup>
+              <li
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("mastercourselist") && "bg-slate-900"
+                  }`}
+              >
+                <NavLink
+                  end
+                  to="/mastercourselist"
+                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("courses")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                    }`}
+                >
+                  <div className="flex items-center">
+                    <QuestionMarkCircleIcon className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                      <path
+                        className={`fill-current ${pathname.includes("mastercourselist")
+                            ? "text-indigo-500"
+                            : "text-slate-600"
+                          }`}
+                        d="M20 7a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 0120 7zM4 23a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 014 23z"
+                      />
+                      <path
+                        className={`fill-current ${pathname.includes("mastercourselist")
+                            ? "text-indigo-300"
+                            : "text-slate-400"
+                          }`}
+                        d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
+                      />
+                    </QuestionMarkCircleIcon>
+                    <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                      All Courses
+                    </span>
+                  </div>
+                </NavLink>
+              </li>
               {/* Aboutus */}
               <li
                 className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("aboutus") && "bg-slate-900"
@@ -387,6 +423,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 </NavLink>
               </li>
             </ul>
+          </div>
+          <div className="">
+          <Coffee />
           </div>
         </div>
 
