@@ -6,7 +6,7 @@ export function RatingWithText() {
  
   return (
     <div className="flex items-center gap-2 font-bold text-blue-gray-500">
-      {rated}.7
+      {rated}
       <Rating value={4} onChange={(value) => setRated(value)} />
       <Typography color="blue-gray" className="font-medium text-blue-gray-500">
         Based on 134 Reviews

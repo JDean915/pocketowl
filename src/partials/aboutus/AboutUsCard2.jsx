@@ -63,13 +63,7 @@ function AboutUsCard2() {
           <div className="text-sm font-semibold text-slate-400 dark:text-white uppercase mb-1">
             Biography 👋
             <p className="text-slate-800 dark:text-slate-300 normal-case text-xs mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ex
-              tortor, tincidunt et ante sit amet, molestie tristique tortor.
-              Phasellus egestas nisi nisi, sit amet fermentum leo laoreet eget.
-              Nulla vel pellentesque risus. Ut mi elit, iaculis a molestie eu,
-              consequat a lectus. Praesent eu porta mi, eu auctor nisi. Vivamus
-              leo magna, rhoncus in nisl et, congue malesuada tortor. Maecenas
-              vehicula lorem id enim consequat convallis.
+              I am 25 years old and currently working towards my B.S. in Software Engineering. I am passionate about anything technology and I see myself enjoying working on a team that creates innovative and well-designed software. I currently work as an Administrative Program Specialist for a large private university doing data entry and transcript evaluation. My hobbies are music production, personal projects, and woodworking.
             </p>
           </div>
 
@@ -139,26 +133,16 @@ function AboutUsCard2() {
             <div className="text-sm font-semibold text-slate-400 dark:text-white uppercase mb-1">
               Biography 👋
               <p className="text-slate-800 dark:text-slate-300 normal-case text-xs mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                ex tortor, tincidunt et ante sit amet, molestie tristique
-                tortor. Phasellus egestas nisi nisi, sit amet fermentum leo
-                laoreet eget. Nulla vel pellentesque risus. Ut mi elit, iaculis
-                a molestie eu, consequat a lectus. Praesent eu porta mi, eu
-                auctor nisi. Vivamus leo magna, rhoncus in nisl et, congue
-                malesuada tortor. Maecenas vehicula lorem id enim consequat
-                convallis.
+              I'm a 22 year old software engineering student who is passionate about full stack web development. I currently work as a learning specialist at 2U and I provide my technical expertise to Pocket Owl on my own time. I enjoy hiking, listening to music, challenging video games, and cinema.
               </p>
             </div>
 
             <div className="text-sm font-semibold text-slate-400 dark:text-white uppercase mb-1 mt-2">
               Projects
               <p className="text-slate-800 dark:text-slate-300 normal-case text-xs mt-2 mb-3">
-                Project #1
-                <br />
-                Project #2
-                <br />
-                Project #3
-                <br />
+                <a 
+                href="https://github.com/StaticCloud/Pantry"
+                target="_blank">Pantry Project</a>
               </p>
             </div>
           </div>

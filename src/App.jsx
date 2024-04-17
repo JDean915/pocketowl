@@ -9,6 +9,7 @@ import "./css/style.css";
 
 import "./charts/ChartjsConfig";
 import Banner from "./partials/Banner";
+import { ThemeProvider } from "@material-tailwind/react";
 
 function App() {
   const location = useLocation();

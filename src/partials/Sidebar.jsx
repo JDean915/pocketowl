@@ -6,6 +6,7 @@ import { HomeIcon, BookOpenIcon, AdjustmentsHorizontalIcon, QuestionMarkCircleIc
 import SidebarLinkGroup from "./SidebarLinkGroup";
 import logo from "../images/logo.svg";
 import Coffee from "../components/Coffee";
+import QR from "../images/QR.png";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
@@ -426,6 +427,11 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
           <div className="">
           <Coffee />
+          <div className="mt-10 pl-12 ml-2">
+          <img
+            src={QR}
+            className="h-[100px] w-[100px] mt-15"></img>
+            </div>
           </div>
         </div>
 
