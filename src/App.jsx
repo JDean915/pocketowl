@@ -1,28 +1,18 @@
-import React, { useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
-import { createClient } from '@supabase/supabase-js'
+import React, { useEffect, useState } from "react";
+import { useLocation, Outlet } from "react-router-dom";
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from "@supabase/auth-ui-shared";
+import Header from "./partials/Header";
+import Sidebar from "./partials/Sidebar";
 
 import "./css/style.css";
 
 import "./charts/ChartjsConfig";
-
-// Import pages
-import Dashboard from "./pages/Dashboard";
-import CoursePage from "./pages/CoursePage";
-import Aboutus from "./pages/AboutUs";
-import SupaAuth from "./components/SupaAuth";
-import Account from "./pages/Account";
-import AllCourses from "./pages/AllCourses";
-
-const supabase = createClient(
-  "https://tqofpvsbigvicndmdnna.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxb2ZwdnNiaWd2aWNuZG1kbm5hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTIxNzg3MzQsImV4cCI6MjAyNzc1NDczNH0.pXo0Xbj7845kvNixJDt4kZI70mj8tT5IIEPny5aZMjw"
-);
+import Banner from "./partials/Banner";
 
 function App() {
   const location = useLocation();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     document.querySelector("html").style.scrollBehavior = "auto";
@@ -31,16 +21,16 @@ function App() {
   }, [location.pathname]); // triggered on route change
 
   return (
-    <>
-      <Routes>
-        <Route path="/authenticate" element={<SupaAuth />} />
-        <Route index element={<Dashboard />} />
-        <Route exact path="/courses/:code" element={<CoursePage />} />
-        <Route exact path="/aboutus" element={<Aboutus />} />
-        <Route exact path="/settings/account" element={<Account />} />
-        <Route exact path="/mastercourselist" element={<AllCourses />} />
-      </Routes>
-    </>
+    <div className="flex h-screen overflow-hidden">
+      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+      <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
+        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        <main>
+          <Outlet />
+        </main>
+        <Banner />
+      </div>
+    </div>
   );
 }
 
