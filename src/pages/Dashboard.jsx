@@ -1,7 +1,8 @@
 import React from "react";
 
 import WelcomeBanner from "../partials/dashboard/WelcomeBanner";
-import DashboardCard10 from "../partials/dashboard/DashboardCard01";
+import DashboardCard01 from "../partials/dashboard/DashboardCard01";
+import FeedbackRequest from "../partials/dashboard/FeedbackRequest";
 
 function Dashboard() {
 
@@ -13,7 +14,8 @@ function Dashboard() {
       {/* Cards */}
       <div className="grid grid-cols-12 gap-6">
         {/* Card (Customers) */}
-        <DashboardCard10 />
+        <DashboardCard01 />
+        <FeedbackRequest />
       </div>
     </div>
 

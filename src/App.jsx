@@ -29,7 +29,6 @@ function App() {
         <main>
           <Outlet />
         </main>
-        <Banner />
       </div>
     </div>
   );
