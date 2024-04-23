@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-import Disclaimer from "../components/Disclaimer";
+import Disclaimer from "../components/Disclaimer"
 
 function Account() {
   return (

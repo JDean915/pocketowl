@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 function CoursePage() {
   const { code } = useParams()
   const [courseData, setCourseData] = useState({})
+  const [resourceData, setResourceData] = useState({})
 
   useEffect(() => {
     const getCourseData = async () => {
@@ -27,6 +28,22 @@ function CoursePage() {
     getCourseData()
   }, [code])
 
+  useEffect(() => {
+    const getResourceData = async () => {
+      let { data, error } = await supabase
+        .from('Resource')
+        .select('*')
+        .eq('course_code', code)
+        .single();
+
+      if (data) {
+        setResourceData(data)
+      }
+    }
+
+    getResourceData()
+  }, [code])
+
 
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
@@ -34,7 +51,7 @@ function CoursePage() {
       <div className="grid grid-cols-12 gap-6">
         <CompetencyProgress />
         {courseData && <CourseSummary courseData={courseData} />}
-        <ResourceCompletion />
+        {resourceData && <ResourceCompletion resourceData={resourceData} />}
       </div>
     </div>
   );

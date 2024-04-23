@@ -3,6 +3,7 @@ import { ThemeSupa } from "@supabase/auth-ui-shared";
 import supabase from "../utils/SupaClient";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../images/logo.svg"
 
 const SupaAuth = () => {
   const navigate = useNavigate();
@@ -24,9 +25,13 @@ const SupaAuth = () => {
     <div className="flex justify-center pt-20 ">
       <div className={`flex items-center md:flex-row flex-col mt-10`}>
         <div
-          className={`flex flex-col bg-slate-800 w-[400px] h-[600px] rounded-xl`}
+          className={`flex flex-col bg-slate-800 w-[400px] h-[530px] rounded-xl`}
         >
           <div className={"w-[300px] ml-12 pt-6"}>
+          <img 
+            src={logo}
+            className="mx-3 h-[100px] w-[250px]"/>
+            <div className="mt-5">
             <Auth
               supabaseClient={supabase}
               view="sign_in"
@@ -58,7 +63,9 @@ const SupaAuth = () => {
                   },
                 },
               }}
+              providers={email}
             />
+            </div>
           </div>
         </div>
       </div>

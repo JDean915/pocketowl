@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import supabase from "./../utils/SupaClient";
-import { HomeIcon, BookOpenIcon, AdjustmentsHorizontalIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/solid'
+import {
+  HomeIcon,
+  BookOpenIcon,
+  AdjustmentsHorizontalIcon,
+  QuestionMarkCircleIcon,
+} from "@heroicons/react/24/solid";
 
 import SidebarLinkGroup from "./SidebarLinkGroup";
 import logo from "../images/logo.svg";
@@ -24,14 +29,16 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
   useEffect(() => {
     const getCourses = async () => {
-      let { data, error } = await supabase.from("Course").select("*");
+      let { data, error } = await supabase
+        .from("Course")
+        .select("*")
+        .order("course_name", { ascending: true});
 
       setCourses(data);
     };
 
     getCourses();
   }, []);
-
 
   // close on click outside
   useEffect(() => {
@@ -72,8 +79,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
     <div>
       {/* Sidebar backdrop (mobile only) */}
       <div
-        className={`fixed inset-0 bg-slate-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
+        className={`fixed inset-0 bg-slate-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${
+          sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
         aria-hidden="true"
       ></div>
 
@@ -81,8 +89,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       <div
         id="sidebar"
         ref={sidebar}
-        className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 p-4 transition-all duration-200 ease-in-out ${sidebarOpen ? "translate-x-0" : "-translate-x-64"
-          }`}
+        className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 p-4 transition-all duration-200 ease-in-out ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-64"
+        }`}
       >
         {/* Sidebar header */}
         <div className="flex justify-between mb-10 pr-3 sm:px-2">
@@ -126,31 +135,35 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </h3>
             <ul className="mt-3">
               <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("courses") && "bg-slate-900"
-                  }`}
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("courses") && "bg-slate-900"
+                }`}
               >
                 <NavLink
                   end
                   to="/"
-                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("dashboard")
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("dashboard")
                       ? "hover:text-slate-200"
                       : "hover:text-white"
-                    }`}
+                  }`}
                 >
                   <div className="flex items-center">
                     <HomeIcon className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
                       <path
-                        className={`fill-current ${pathname.includes("dashboard")
+                        className={`fill-current ${
+                          pathname.includes("dashboard")
                             ? "text-indigo-500"
                             : "text-slate-600"
-                          }`}
+                        }`}
                         d="M20 7a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 0120 7zM4 23a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 014 23z"
                       />
                       <path
-                        className={`fill-current ${pathname.includes("dashboard")
+                        className={`fill-current ${
+                          pathname.includes("dashboard")
                             ? "text-indigo-300"
                             : "text-slate-400"
-                          }`}
+                        }`}
                         d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
                       />
                     </HomeIcon>
@@ -167,10 +180,11 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     <React.Fragment>
                       <a
                         href="#0"
-                        className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("courses")
+                        className={`block text-slate-200 truncate transition duration-150 ${
+                          pathname.includes("courses")
                             ? "hover:text-slate-200"
                             : "hover:text-white"
-                          }`}
+                        }`}
                         onClick={(e) => {
                           e.preventDefault();
                           sidebarExpanded
@@ -185,17 +199,19 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               viewBox="0 0 24 24"
                             >
                               <path
-                                className={`fill-current ${pathname.includes("courses")
+                                className={`fill-current ${
+                                  pathname.includes("courses")
                                     ? "text-indigo-500"
                                     : "text-slate-600"
-                                  }`}
+                                }`}
                                 d="M18.974 8H22a2 2 0 012 2v6h-2v5a1 1 0 01-1 1h-2a1 1 0 01-1-1v-5h-2v-6a2 2 0 012-2h.974zM20 7a2 2 0 11-.001-3.999A2 2 0 0120 7zM2.974 8H6a2 2 0 012 2v6H6v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5H0v-6a2 2 0 012-2h.974zM4 7a2 2 0 11-.001-3.999A2 2 0 014 7z"
                               />
                               <path
-                                className={`fill-current ${pathname.includes("courses")
+                                className={`fill-current ${
+                                  pathname.includes("courses")
                                     ? "text-indigo-300"
                                     : "text-slate-400"
-                                  }`}
+                                }`}
                                 d="M12 6a3 3 0 110-6 3 3 0 010 6zm2 18h-4a1 1 0 01-1-1v-6H6v-6a3 3 0 013-3h6a3 3 0 013 3v6h-3v6a1 1 0 01-1 1z"
                               />
                             </BookOpenIcon>
@@ -206,8 +222,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           {/* Icon */}
                           <div className="flex shrink-0 ml-2">
                             <svg
-                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${open && "rotate-180"
-                                }`}
+                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${
+                                open && "rotate-180"
+                              }`}
                               viewBox="0 0 12 12"
                             >
                               <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
@@ -228,11 +245,11 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                       (isActive
                                         ? "text-indigo-500"
                                         : "text-slate-400 hover:text-slate-200")
-                                    }>
-                                    {course.course_code}{" "} - {" "}{course.course_name}
+                                    }
+                                  >
+                                    {course.course_code} - {course.course_name}
                                   </NavLink>
                                 </span>
-
                               );
                             })}
                           </li>
@@ -249,10 +266,11 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     <React.Fragment>
                       <a
                         href="#0"
-                        className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("settings")
+                        className={`block text-slate-200 truncate transition duration-150 ${
+                          pathname.includes("settings")
                             ? "hover:text-slate-200"
                             : "hover:text-white"
-                          }`}
+                        }`}
                         onClick={(e) => {
                           e.preventDefault();
                           sidebarExpanded
@@ -267,31 +285,35 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               viewBox="0 0 24 24"
                             >
                               <path
-                                className={`fill-current ${pathname.includes("settings")
+                                className={`fill-current ${
+                                  pathname.includes("settings")
                                     ? "text-indigo-500"
                                     : "text-slate-600"
-                                  }`}
+                                }`}
                                 d="M19.714 14.7l-7.007 7.007-1.414-1.414 7.007-7.007c-.195-.4-.298-.84-.3-1.286a3 3 0 113 3 2.969 2.969 0 01-1.286-.3z"
                               />
                               <path
-                                className={`fill-current ${pathname.includes("settings")
+                                className={`fill-current ${
+                                  pathname.includes("settings")
                                     ? "text-indigo-300"
                                     : "text-slate-400"
-                                  }`}
+                                }`}
                                 d="M10.714 18.3c.4-.195.84-.298 1.286-.3a3 3 0 11-3 3c.002-.446.105-.885.3-1.286l-6.007-6.007 1.414-1.414 6.007 6.007z"
                               />
                               <path
-                                className={`fill-current ${pathname.includes("settings")
+                                className={`fill-current ${
+                                  pathname.includes("settings")
                                     ? "text-indigo-500"
                                     : "text-slate-600"
-                                  }`}
+                                }`}
                                 d="M5.7 10.714c.195.4.298.84.3 1.286a3 3 0 11-3-3c.446.002.885.105 1.286.3l7.007-7.007 1.414 1.414L5.7 10.714z"
                               />
                               <path
-                                className={`fill-current ${pathname.includes("settings")
+                                className={`fill-current ${
+                                  pathname.includes("settings")
                                     ? "text-indigo-300"
                                     : "text-slate-400"
-                                  }`}
+                                }`}
                                 d="M19.707 9.292a3.012 3.012 0 00-1.415 1.415L13.286 5.7c-.4.195-.84.298-1.286.3a3 3 0 113-3 2.969 2.969 0 01-.3 1.286l5.007 5.006z"
                               />
                             </AdjustmentsHorizontalIcon>
@@ -302,8 +324,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           {/* Icon */}
                           <div className="flex shrink-0 ml-2">
                             <svg
-                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${open && "rotate-180"
-                                }`}
+                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${
+                                open && "rotate-180"
+                              }`}
                               viewBox="0 0 12 12"
                             >
                               <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
@@ -353,31 +376,38 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 }}
               </SidebarLinkGroup>
               <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("mastercourselist") && "bg-slate-900"
-                  }`}
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("mastercourselist") && "bg-slate-900"
+                }`}
               >
                 <NavLink
                   end
                   to="/mastercourselist"
-                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("courses")
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("courses")
                       ? "hover:text-slate-200"
                       : "hover:text-white"
-                    }`}
+                  }`}
                 >
                   <div className="flex items-center">
-                    <QuestionMarkCircleIcon className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                    <QuestionMarkCircleIcon
+                      className="shrink-0 h-6 w-6"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        className={`fill-current ${pathname.includes("mastercourselist")
+                        className={`fill-current ${
+                          pathname.includes("mastercourselist")
                             ? "text-indigo-500"
                             : "text-slate-600"
-                          }`}
+                        }`}
                         d="M20 7a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 0120 7zM4 23a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 014 23z"
                       />
                       <path
-                        className={`fill-current ${pathname.includes("mastercourselist")
+                        className={`fill-current ${
+                          pathname.includes("mastercourselist")
                             ? "text-indigo-300"
                             : "text-slate-400"
-                          }`}
+                        }`}
                         d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
                       />
                     </QuestionMarkCircleIcon>
@@ -389,31 +419,38 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </li>
               {/* Aboutus */}
               <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("aboutus") && "bg-slate-900"
-                  }`}
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("aboutus") && "bg-slate-900"
+                }`}
               >
                 <NavLink
                   end
                   to="/aboutus"
-                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("aboutus")
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("aboutus")
                       ? "hover:text-slate-200"
                       : "hover:text-white"
-                    }`}
+                  }`}
                 >
                   <div className="flex items-center">
-                    <QuestionMarkCircleIcon className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                    <QuestionMarkCircleIcon
+                      className="shrink-0 h-6 w-6"
+                      viewBox="0 0 24 24"
+                    >
                       <path
-                        className={`fill-current ${pathname.includes("aboutus")
+                        className={`fill-current ${
+                          pathname.includes("aboutus")
                             ? "text-indigo-500"
                             : "text-slate-600"
-                          }`}
+                        }`}
                         d="M20 7a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 0120 7zM4 23a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 014 23z"
                       />
                       <path
-                        className={`fill-current ${pathname.includes("aboutus")
+                        className={`fill-current ${
+                          pathname.includes("aboutus")
                             ? "text-indigo-300"
                             : "text-slate-400"
-                          }`}
+                        }`}
                         d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
                       />
                     </QuestionMarkCircleIcon>
@@ -426,11 +463,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </ul>
           </div>
           <div className="">
-          <Coffee />
-          <div className="mt-10 pl-12 ml-2">
-          <img
-            src={QR}
-            className="h-[100px] w-[100px] mt-15"></img>
+            <Coffee />
+            <div className="mt-10 pl-12 ml-2">
+              <img src={QR} className="h-[100px] w-[100px] mt-15"></img>
             </div>
           </div>
         </div>
